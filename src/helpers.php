@@ -1,28 +1,23 @@
 <?php
 
-use Illuminate\Support\Arr;
-use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Str;
-use Shared\Exceptions\Alert\ErrorException;
-use Shared\Exceptions\Alert\InfoException;
-use Shared\Exceptions\Alert\WarningException;
 
-if (! function_exists('moduleHas')) {
+if (! function_exists('module_has')) {
     /**
      * Check if the module exists.
      */
-    function moduleHas(string $module): bool
+    function module_has(string $module): bool
     {
-        return File::isDirectory(modulePath($module));
+        return File::isDirectory(module_path($module));
     }
 }
 
-if (! function_exists('modulePath')) {
+if (! function_exists('module_path')) {
     /**
      * Get the module path.
      */
-    function modulePath(string $module, string $path = ''): string
+    function module_path(string $module, string $path = ''): string
     {
         $path = Str::start($path, '/');
 
@@ -30,11 +25,11 @@ if (! function_exists('modulePath')) {
     }
 }
 
-if (! function_exists('moduleComponent')) {
+if (! function_exists('module_component')) {
     /**
      * Get the vite component path.
      */
-    function moduleComponent(string $component): string
+    function module_component(string $component): string
     {
         if (Str::startsWith($component, 'modules/')) {
             return "{$component}.tsx";
