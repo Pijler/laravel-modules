@@ -15,9 +15,4 @@ class ControllerMakeCommand extends BaseControllerMakeCommand
      * The console command name.
      */
     protected $name = 'module:make-controller';
-
-    /**
-     * The console command description.
-     */
-    protected $description = 'Create a new controller class';
 }

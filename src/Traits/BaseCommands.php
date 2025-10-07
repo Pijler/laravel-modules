@@ -9,6 +9,40 @@ use Symfony\Component\Console\Input\InputArgument;
 trait BaseCommands
 {
     /**
+     * Get the root namespace for the class.
+     */
+    protected function rootNamespace(): string
+    {
+        $module = $this->argument('module');
+
+        return "{$module}\\";
+    }
+
+    /**
+     * Get the destination class path.
+     */
+    protected function getPath($name): string
+    {
+        $module = $this->argument('module');
+
+        $name = Str::replaceFirst($this->rootNamespace(), '', $name);
+
+        return module_path($module, 'app').'/'.str_replace('\\', '/', $name).'.php';
+    }
+
+    /**
+     * Get the first view directory path from the application configuration.
+     */
+    protected function viewPath($path = ''): string
+    {
+        $module = $this->argument('module');
+
+        $views = module_path($module, 'resources/views');
+
+        return $views.($path ? DIRECTORY_SEPARATOR.$path : $path);
+    }
+
+    /**
      * Get the console command arguments.
      */
     protected function getArguments(): array
@@ -42,10 +76,8 @@ trait BaseCommands
 
     /**
      * Get a list of possible event names.
-     *
-     * @return array<int, string>
      */
-    protected function possibleEvents()
+    protected function possibleEvents(): array
     {
         $module = $this->argument('module');
 
@@ -60,39 +92,5 @@ trait BaseCommands
             ->sort()
             ->values()
             ->all();
-    }
-
-    /**
-     * Get the root namespace for the class.
-     */
-    protected function rootNamespace(): string
-    {
-        $module = $this->argument('module');
-
-        return "{$module}\\";
-    }
-
-    /**
-     * Get the destination class path.
-     */
-    protected function getPath($name)
-    {
-        $module = $this->argument('module');
-
-        $name = Str::replaceFirst($this->rootNamespace(), '', $name);
-
-        return module_path($module, 'app').'/'.str_replace('\\', '/', $name).'.php';
-    }
-
-    /**
-     * Get the first view directory path from the application configuration.
-     */
-    protected function viewPath($path = '')
-    {
-        $module = $this->argument('module');
-
-        $views = module_path($module, 'resources/views');
-
-        return $views.($path ? DIRECTORY_SEPARATOR.$path : $path);
     }
 }
