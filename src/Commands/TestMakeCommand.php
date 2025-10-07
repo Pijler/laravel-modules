@@ -22,7 +22,9 @@ class TestMakeCommand extends BaseTestMakeCommand
      */
     protected function rootNamespace(): string
     {
-        return 'Tests';
+        $module = $this->argument('module');
+
+        return "Modules\\$module\\tests";
     }
 
     /**
@@ -30,8 +32,10 @@ class TestMakeCommand extends BaseTestMakeCommand
      */
     protected function getPath($name): string
     {
+        $module = $this->argument('module');
+
         $name = Str::replaceFirst($this->rootNamespace(), '', $name);
 
-        return base_path('tests').str_replace('\\', '/', $name).'.php';
+        return module_path($module, 'tests').str_replace('\\', '/', $name).'.php';
     }
 }
