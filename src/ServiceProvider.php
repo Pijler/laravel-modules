@@ -3,6 +3,7 @@
 namespace Modules;
 
 use Illuminate\Support\ServiceProvider as LaravelServiceProvider;
+use Modules\Commands\ControllerMakeCommand;
 use Modules\Support\Macros;
 
 class ServiceProvider extends LaravelServiceProvider
@@ -13,5 +14,11 @@ class ServiceProvider extends LaravelServiceProvider
     public function boot(): void
     {
         Macros::boot();
+
+        if ($this->app->runningInConsole()) {
+            $this->commands([
+                ControllerMakeCommand::class,
+            ]);
+        }
     }
 }
