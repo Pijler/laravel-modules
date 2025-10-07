@@ -6,6 +6,8 @@ use Illuminate\Support\Facades\File;
 use Illuminate\Support\Str;
 use Symfony\Component\Console\Input\InputArgument;
 
+use function Laravel\Prompts\select;
+
 trait BaseCommands
 {
     /**
@@ -58,7 +60,13 @@ trait BaseCommands
     protected function promptForMissingArgumentsUsing(): array
     {
         return array_merge([
-            'module' => 'Which module would you like to use?',
+            'module' => function () {
+                return select(
+                    options: $this->possibleModules(),
+                    scroll: count($this->possibleModules()),
+                    label: 'Which module would you like to use?',
+                );
+            },
         ], parent::promptForMissingArgumentsUsing());
     }
 
@@ -92,5 +100,24 @@ trait BaseCommands
             ->sort()
             ->values()
             ->all();
+    }
+
+    /**
+     * Create the matching test case if requested.
+     */
+    protected function handleTestCreation($path): bool
+    {
+        if (! $this->option('test') && ! $this->option('pest') && ! $this->option('phpunit')) {
+            return false;
+        }
+
+        $module = module_path($this->argument('module'), 'app');
+
+        return $this->call('module:make-test', [
+            '--pest' => $this->option('pest'),
+            'module' => $this->argument('module'),
+            '--phpunit' => $this->option('phpunit'),
+            'name' => Str::of($path)->after($module)->beforeLast('.php')->append('Test')->replace('\\', '/'),
+        ]) == 0;
     }
 }
