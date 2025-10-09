@@ -15,4 +15,9 @@ class ComponentMakeCommand extends BaseComponentMakeCommand
      * The console command name.
      */
     protected $name = 'module:make-component';
+
+    /**
+     * The console command description.
+     */
+    protected $description = 'Create a new view component class in the specified module';
 }

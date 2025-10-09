@@ -15,4 +15,9 @@ class CastMakeCommand extends BaseCastMakeCommand
      * The console command name.
      */
     protected $name = 'module:make-cast';
+
+    /**
+     * The console command description.
+     */
+    protected $description = 'Create a new custom Eloquent cast class in the specified module';
 }

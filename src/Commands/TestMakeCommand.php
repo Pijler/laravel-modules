@@ -18,6 +18,11 @@ class TestMakeCommand extends BaseTestMakeCommand
     protected $name = 'module:make-test';
 
     /**
+     * The console command description.
+     */
+    protected $description = 'Create a new test class in the specified module';
+
+    /**
      * Get the root namespace for the class.
      */
     protected function rootNamespace(): string

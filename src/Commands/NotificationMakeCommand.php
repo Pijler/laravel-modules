@@ -15,4 +15,9 @@ class NotificationMakeCommand extends BaseNotificationMakeCommand
      * The console command name.
      */
     protected $name = 'module:make-notification';
+
+    /**
+     * The console command description.
+     */
+    protected $description = 'Create a new notification class in the specified module';
 }

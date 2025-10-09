@@ -23,6 +23,11 @@ class ConfigMakeCommand extends BaseConfigMakeCommand
     protected $aliases = ['config:make-module'];
 
     /**
+     * The console command description.
+     */
+    protected $description = 'Create a new configuration file in the specified module';
+
+    /**
      * Get the destination file path.
      */
     protected function getPath($name): string

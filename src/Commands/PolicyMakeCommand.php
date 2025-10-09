@@ -15,4 +15,9 @@ class PolicyMakeCommand extends BasePolicyMakeCommand
      * The console command name.
      */
     protected $name = 'module:make-policy';
+
+    /**
+     * The console command description.
+     */
+    protected $description = 'Create a new policy class in the specified module';
 }

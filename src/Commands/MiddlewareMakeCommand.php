@@ -15,4 +15,9 @@ class MiddlewareMakeCommand extends BaseMiddlewareMakeCommand
      * The console command name.
      */
     protected $name = 'module:make-middleware';
+
+    /**
+     * The console command description.
+     */
+    protected $description = 'Create a new HTTP middleware class in the specified module';
 }

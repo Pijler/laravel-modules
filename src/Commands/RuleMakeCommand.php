@@ -15,4 +15,9 @@ class RuleMakeCommand extends BaseRuleMakeCommand
      * The console command name.
      */
     protected $name = 'module:make-rule';
+
+    /**
+     * The console command description.
+     */
+    protected $description = 'Create a new validation rule in the specified module';
 }

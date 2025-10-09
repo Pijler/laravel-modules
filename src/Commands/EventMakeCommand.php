@@ -15,4 +15,9 @@ class EventMakeCommand extends BaseEventMakeCommand
      * The console command name.
      */
     protected $name = 'module:make-event';
+
+    /**
+     * The console command description.
+     */
+    protected $description = 'Create a new event class in the specified module';
 }

@@ -15,4 +15,9 @@ class ListenerMakeCommand extends BaseListenerMakeCommand
      * The console command name.
      */
     protected $name = 'module:make-listener';
+
+    /**
+     * The console command description.
+     */
+    protected $description = 'Create a new event listener class in the specified module';
 }

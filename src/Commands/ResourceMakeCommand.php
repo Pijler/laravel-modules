@@ -15,4 +15,9 @@ class ResourceMakeCommand extends BaseResourceMakeCommand
      * The console command name.
      */
     protected $name = 'module:make-resource';
+
+    /**
+     * The console command description.
+     */
+    protected $description = 'Create a new resource in the specified module';
 }

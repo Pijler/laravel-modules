@@ -15,4 +15,9 @@ class JobMakeCommand extends BaseJobMakeCommand
      * The console command name.
      */
     protected $name = 'module:make-job';
+
+    /**
+     * The console command description.
+     */
+    protected $description = 'Create a new job class in the specified module';
 }

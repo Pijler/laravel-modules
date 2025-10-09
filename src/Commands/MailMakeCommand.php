@@ -15,4 +15,9 @@ class MailMakeCommand extends BaseMailMakeCommand
      * The console command name.
      */
     protected $name = 'module:make-mail';
+
+    /**
+     * The console command description.
+     */
+    protected $description = 'Create a new email class in the specified module';
 }

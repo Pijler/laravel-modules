@@ -15,4 +15,9 @@ class ProviderMakeCommand extends BaseProviderMakeCommand
      * The console command name.
      */
     protected $name = 'module:make-provider';
+
+    /**
+     * The console command description.
+     */
+    protected $description = 'Create a new service provider class in the specified module';
 }

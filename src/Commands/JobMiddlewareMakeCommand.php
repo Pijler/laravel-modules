@@ -15,4 +15,9 @@ class JobMiddlewareMakeCommand extends BaseJobMiddlewareMakeCommand
      * The console command name.
      */
     protected $name = 'module:make-job-middleware';
+
+    /**
+     * The console command description.
+     */
+    protected $description = 'Create a new job middleware class in the specified module';
 }

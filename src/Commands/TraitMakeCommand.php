@@ -17,6 +17,11 @@ class TraitMakeCommand extends BaseTraitMakeCommand
     protected $name = 'module:make-trait';
 
     /**
+     * The console command description.
+     */
+    protected $description = 'Create a new trait in the specified module';
+
+    /**
      * Get the default namespace for the class.
      */
     protected function getDefaultNamespace($rootNamespace): string

@@ -15,4 +15,9 @@ class ScopeMakeCommand extends BaseScopeMakeCommand
      * The console command name.
      */
     protected $name = 'module:make-scope';
+
+    /**
+     * The console command description.
+     */
+    protected $description = 'Create a new scope class in the specified module';
 }

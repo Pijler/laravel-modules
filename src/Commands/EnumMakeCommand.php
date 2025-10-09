@@ -17,6 +17,11 @@ class EnumMakeCommand extends BaseEnumMakeCommand
     protected $name = 'module:make-enum';
 
     /**
+     * The console command description.
+     */
+    protected $description = 'Create a new enum in the specified module';
+
+    /**
      * Get the default namespace for the class.
      */
     protected function getDefaultNamespace($rootNamespace): string

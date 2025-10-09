@@ -15,4 +15,9 @@ class ConsoleMakeCommand extends BaseConsoleMakeCommand
      * The console command name.
      */
     protected $name = 'module:make-command';
+
+    /**
+     * The console command description.
+     */
+    protected $description = 'Create a new Artisan command in the specified module';
 }

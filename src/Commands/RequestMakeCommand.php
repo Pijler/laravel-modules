@@ -15,4 +15,9 @@ class RequestMakeCommand extends BaseRequestMakeCommand
      * The console command name.
      */
     protected $name = 'module:make-request';
+
+    /**
+     * The console command description.
+     */
+    protected $description = 'Create a new form request class in the specified module';
 }

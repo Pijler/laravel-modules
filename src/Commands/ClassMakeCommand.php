@@ -15,4 +15,9 @@ class ClassMakeCommand extends BaseClassMakeCommand
      * The console command name.
      */
     protected $name = 'module:make-class';
+
+    /**
+     * The console command description.
+     */
+    protected $description = 'Create a new class in the specified module';
 }

@@ -15,4 +15,9 @@ class ChannelMakeCommand extends BaseChannelMakeCommand
      * The console command name.
      */
     protected $name = 'module:make-channel';
+
+    /**
+     * The console command description.
+     */
+    protected $description = 'Create a new channel class in the specified module';
 }

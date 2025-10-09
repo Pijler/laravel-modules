@@ -17,6 +17,11 @@ class InterfaceMakeCommand extends BaseInterfaceMakeCommand
     protected $name = 'module:make-interface';
 
     /**
+     * The console command description.
+     */
+    protected $description = 'Create a new interface in the specified module';
+
+    /**
      * Get the default namespace for the class.
      */
     protected function getDefaultNamespace($rootNamespace): string

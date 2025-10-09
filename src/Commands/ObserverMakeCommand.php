@@ -15,4 +15,9 @@ class ObserverMakeCommand extends BaseObserverMakeCommand
      * The console command name.
      */
     protected $name = 'module:make-observer';
+
+    /**
+     * The console command description.
+     */
+    protected $description = 'Create a new observer class in the specified module';
 }
