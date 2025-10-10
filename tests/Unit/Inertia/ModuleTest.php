@@ -1,6 +1,5 @@
 <?php
 
-use Illuminate\Support\Facades\File;
 use Modules\Exceptions\FilePathIsIncorrectException;
 use Modules\Exceptions\FilePathNotSpecifiedException;
 use Modules\Exceptions\ModuleNameNotFoundException;
