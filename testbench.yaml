@@ -1,0 +1,9 @@
+laravel: "./workbench"
+
+providers:
+  - Modules\ServiceProvider
+
+workbench:
+  start: "/"
+  install: true
+  health: false

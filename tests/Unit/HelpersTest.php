@@ -1,7 +1,7 @@
 <?php
 
 test('it should checks if the module exists', function () {
-    $exists = module_has('Admin');
+    $exists = module_has('Auth');
 
     expect($exists)->toBeTrue();
 
@@ -11,21 +11,21 @@ test('it should checks if the module exists', function () {
 });
 
 test('it should gets the module path', function () {
-    $path = module_path('Admin');
+    $path = module_path('Auth');
 
-    expect($path)->toBe(base_path('modules/Admin'));
+    expect($path)->toBe(base_path('modules/Auth'));
 
-    $path = module_path('Admin', 'routes/web.php');
+    $path = module_path('Auth', 'routes/web.php');
 
-    expect($path)->toBe(base_path('modules/Admin/routes/web.php'));
+    expect($path)->toBe(base_path('modules/Auth/routes/web.php'));
 });
 
 test('it should gets the vite component path', function () {
-    $path = module_component('Admin');
+    $path = module_component('Index');
 
-    expect($path)->toBe('resources/js/Pages/Admin.tsx');
+    expect($path)->toBe('resources/js/Pages/Index.tsx');
 
-    $path = module_component('modules/Admin');
+    $path = module_component('modules/Auth/resources/js/Pages/Index');
 
-    expect($path)->toBe('modules/Admin.tsx');
+    expect($path)->toBe('modules/Auth/resources/js/Pages/Index.tsx');
 });

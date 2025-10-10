@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\File;
 use Modules\Exceptions\FilePathIsIncorrectException;
 use Modules\Exceptions\FilePathNotSpecifiedException;
 use Modules\Exceptions\ModuleNameNotFoundException;
@@ -17,19 +18,19 @@ test('it should module path', function () {
     $path = $this->module->build('Index.tsx');
     expect($path)->toBe('Index.tsx');
 
-    $path = $this->module->build('Shopping::Index');
-    expect($path)->toBe('modules/Shopping/resources/js/Pages/Index');
+    $path = $this->module->build('Auth::Index');
+    expect($path)->toBe('modules/Auth/resources/js/Pages/Index');
 
-    $path = $this->module->build('Shopping::Index.tsx');
-    expect($path)->toBe('modules/Shopping/resources/js/Pages/Index');
+    $path = $this->module->build('Auth::Index.tsx');
+    expect($path)->toBe('modules/Auth/resources/js/Pages/Index');
 });
 
 test('it should get full path - exception', function () {
-    $this->module->build('Shopping::NotExist');
+    $this->module->build('Auth::NotExist');
 })->throws(FilePathIsIncorrectException::class);
 
 test('it should get path - exception', function () {
-    $this->module->build('Shopping::');
+    $this->module->build('Auth::');
 })->throws(FilePathNotSpecifiedException::class);
 
 test('it should get module name - exception', function () {
