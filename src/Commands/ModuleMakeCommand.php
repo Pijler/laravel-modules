@@ -69,6 +69,11 @@ class ModuleMakeCommand extends Command
         File::ensureDirectoryExists(module_path($module));
 
         File::copyDirectory(__DIR__.'/stubs/Example', module_path($module));
+
+        File::move(
+            path: module_path($module, 'config/example.php'),
+            target: module_path($module, 'config/'.Str::kebab($module).'.php'),
+        );
     }
 
     /**
