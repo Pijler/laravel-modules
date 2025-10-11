@@ -19,6 +19,7 @@ use Modules\Commands\JobMiddlewareMakeCommand;
 use Modules\Commands\ListenerMakeCommand;
 use Modules\Commands\MailMakeCommand;
 use Modules\Commands\MiddlewareMakeCommand;
+use Modules\Commands\ModuleMakeCommand;
 use Modules\Commands\NotificationMakeCommand;
 use Modules\Commands\ObserverMakeCommand;
 use Modules\Commands\PolicyMakeCommand;
@@ -59,6 +60,7 @@ class ServiceProvider extends LaravelServiceProvider
                 ListenerMakeCommand::class,
                 MailMakeCommand::class,
                 MiddlewareMakeCommand::class,
+                ModuleMakeCommand::class,
                 NotificationMakeCommand::class,
                 ObserverMakeCommand::class,
                 PolicyMakeCommand::class,
