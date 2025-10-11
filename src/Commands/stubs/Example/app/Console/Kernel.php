@@ -12,7 +12,7 @@ class Kernel extends BaseKernel
      */
     public function schedule(Schedule $schedule): void
     {
-        // 
+        //
     }
 
     /**
