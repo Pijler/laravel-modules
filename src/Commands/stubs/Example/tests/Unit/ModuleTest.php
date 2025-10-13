@@ -7,10 +7,6 @@ test('it should check the directories in module', function () {
 
     $directories = File::directories($path);
 
-    $files = collect(File::allFiles($path))->map(function (SplFileInfo $file) {
-        return $file->getPathname();
-    })->toArray();
-
     expect($directories)->toContain(
         module_path('Example', 'app'),
         module_path('Example', 'lang'),
