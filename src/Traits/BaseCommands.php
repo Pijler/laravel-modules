@@ -83,6 +83,24 @@ trait BaseCommands
     }
 
     /**
+     * Qualify the given model class base name.
+     */
+    protected function qualifyModel(string $model): string
+    {
+        $rootNamespace = 'App\\';
+
+        $model = ltrim($model, '\\/');
+
+        $model = str_replace('/', '\\', $model);
+
+        if (Str::startsWith($model, $rootNamespace)) {
+            return $model;
+        }
+
+        return is_dir(app_path('Models')) ? "{$rootNamespace}Models\\{$model}" : "{$rootNamespace}{$model}";
+    }
+
+    /**
      * Get a list of possible event names.
      */
     protected function possibleEvents(): array

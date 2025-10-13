@@ -29,8 +29,8 @@ class EnumMakeCommand extends BaseEnumMakeCommand
         $module = $this->argument('module');
 
         return match (true) {
-            is_dir(module_path($module, 'app/Enums')) => $rootNamespace.'\\Enums',
-            is_dir(module_path($module, 'app/Enumerations')) => $rootNamespace.'\\Enumerations',
+            is_dir(module_path($module, 'app/Enums')) => "{$rootNamespace}\\Enums",
+            is_dir(module_path($module, 'app/Enumerations')) => "{$rootNamespace}\\Enumerations",
             default => $rootNamespace,
         };
     }

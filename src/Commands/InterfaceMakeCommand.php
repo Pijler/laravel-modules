@@ -29,8 +29,8 @@ class InterfaceMakeCommand extends BaseInterfaceMakeCommand
         $module = $this->argument('module');
 
         return match (true) {
-            is_dir(module_path($module, 'app/Contracts')) => $rootNamespace.'\\Contracts',
-            is_dir(module_path($module, 'app/Interfaces')) => $rootNamespace.'\\Interfaces',
+            is_dir(module_path($module, 'app/Contracts')) => "{$rootNamespace}\\Contracts",
+            is_dir(module_path($module, 'app/Interfaces')) => "{$rootNamespace}\\Interfaces",
             default => $rootNamespace,
         };
     }

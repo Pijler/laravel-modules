@@ -29,8 +29,8 @@ class TraitMakeCommand extends BaseTraitMakeCommand
         $module = $this->argument('module');
 
         return match (true) {
-            is_dir(module_path($module, 'app/Concerns')) => $rootNamespace.'\\Concerns',
-            is_dir(module_path($module, 'app/Traits')) => $rootNamespace.'\\Traits',
+            is_dir(module_path($module, 'app/Traits')) => "{$rootNamespace}\\Traits",
+            is_dir(module_path($module, 'app/Concerns')) => "{$rootNamespace}\\Concerns",
             default => $rootNamespace,
         };
     }
