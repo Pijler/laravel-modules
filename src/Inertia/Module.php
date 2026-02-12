@@ -38,7 +38,9 @@ class Module
     {
         $path = "resources/js/Pages/{$path}";
 
-        $fullPath = module_path($moduleName, "{$path}.tsx");
+        $extension = config('inertia.page_extension', 'tsx');
+
+        $fullPath = module_path($moduleName, "{$path}.{$extension}");
 
         if (! File::exists($fullPath)) {
             throw FilePathIsIncorrectException::make($fullPath);
@@ -56,9 +58,15 @@ class Module
             throw FilePathNotSpecifiedException::make();
         }
 
-        if (Str::contains($string, '.tsx')) {
-            $string = Str::before($string, '.tsx');
-        }
+        $extensions = config('inertia.page_extensions', ['js', 'jsx', 'svelte', 'ts', 'tsx', 'vue']);
+
+        collect($extensions)->each(function ($extension) use (&$string) {
+            if (Str::doesntContain($string, ".{$extension}")) {
+                return true;
+            }
+
+            $string = Str::before($string, ".{$extension}");
+        });
 
         return Str::of($string)->rtrim('/');
     }
