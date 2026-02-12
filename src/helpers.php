@@ -28,13 +28,17 @@ if (! function_exists('module_path')) {
 if (! function_exists('module_component')) {
     /**
      * Get the vite component path.
+     *
+     * Extension from config('inertia.page_extension') ?? 'tsx'.
      */
     function module_component(string $component): string
     {
+        $extension = config('inertia.page_extension') ?? 'tsx';
+
         if (Str::startsWith($component, 'modules/')) {
-            return "{$component}.tsx";
+            return "{$component}.{$extension}";
         }
 
-        return "resources/js/Pages/{$component}.tsx";
+        return "resources/js/Pages/{$component}.{$extension}";
     }
 }
