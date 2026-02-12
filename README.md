@@ -282,7 +282,7 @@ $configPath = module_path('Users', 'config/module.php');
 
 #### `module_component(string $component): string`
 
-Returns the Vite/Inertia component path for module pages. The file extension comes from `config('inertia.page_extension') ?? 'tsx'`. Add to your `config/inertia.php`:
+Returns the Vite/Inertia component path for module pages. The file extension comes from `config('inertia.page_extension', 'tsx')`. Add to your `config/inertia.php`:
 
 ```php
 'page_extension' => env('INERTIA_PAGE_EXTENSION', 'tsx'),

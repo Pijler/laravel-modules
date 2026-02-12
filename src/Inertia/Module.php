@@ -38,7 +38,7 @@ class Module
     {
         $path = "resources/js/Pages/{$path}";
 
-        $extension = config('inertia.page_extension') ?? 'tsx';
+        $extension = config('inertia.page_extension', 'tsx');
 
         $fullPath = module_path($moduleName, "{$path}.{$extension}");
 

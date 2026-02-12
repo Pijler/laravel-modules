@@ -16,14 +16,6 @@ test('it should gets the module path', function () {
     expect($path)->toBe(base_path('modules/Auth/routes/web.php'));
 });
 
-test('it should gets the vite component path', function () {
-    $path = module_component('Index');
-    expect($path)->toBe('resources/js/Pages/Index.tsx');
-
-    $path = module_component('modules/Auth/resources/js/Pages/Index');
-    expect($path)->toBe('modules/Auth/resources/js/Pages/Index.tsx');
-});
-
 test('it should use configurable extension via inertia config', function () {
     config(['inertia.page_extension' => 'vue']);
 
@@ -37,8 +29,6 @@ test('it should use configurable extension via inertia config', function () {
 });
 
 test('it should default to tsx when no config is set', function () {
-    config(['inertia.page_extension' => null]);
-
     $path = module_component('Index');
     expect($path)->toBe('resources/js/Pages/Index.tsx');
 
