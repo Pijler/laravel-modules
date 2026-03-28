@@ -2,6 +2,7 @@
 
 namespace Modules\Inertia;
 
+use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Str;
 use Illuminate\Support\Stringable;
@@ -38,7 +39,11 @@ class Module
     {
         $path = "resources/js/Pages/{$path}";
 
-        $extension = config('inertia.page_extension', 'tsx');
+        $extension = match (true) {
+            Config::has('inertia.page_extension') => Config::get('inertia.page_extension'),
+            Config::has('inertia.pages.page_extension') => Config::get('inertia.pages.page_extension'),
+            default => 'tsx',
+        };
 
         $fullPath = module_path($moduleName, "{$path}.{$extension}");
 
