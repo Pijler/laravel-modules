@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Support\Facades\Config;
+
 test('it should checks if the module exists', function () {
     $exists = module_has('Auth');
     expect($exists)->toBeTrue();
@@ -17,7 +19,7 @@ test('it should gets the module path', function () {
 });
 
 test('it should use configurable extension via inertia config', function () {
-    config(['inertia.page_extension' => 'vue']);
+    Config::set('inertia.pages.page_extension', 'vue');
 
     $path = module_component('Index');
     expect($path)->toBe('resources/js/Pages/Index.vue');
@@ -25,7 +27,7 @@ test('it should use configurable extension via inertia config', function () {
     $path = module_component('modules/Auth/resources/js/Pages/Index');
     expect($path)->toBe('modules/Auth/resources/js/Pages/Index.vue');
 
-    config(['inertia.page_extension' => null]);
+    Config::set('inertia.pages.page_extension', null);
 });
 
 test('it should default to tsx when no config is set', function () {

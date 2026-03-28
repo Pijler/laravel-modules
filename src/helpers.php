@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Str;
 
@@ -29,11 +30,15 @@ if (! function_exists('module_component')) {
     /**
      * Get the vite component path.
      *
-     * Extension from config('inertia.page_extension', 'tsx').
+     * Extension from config('inertia.page_extension') or config('inertia.pages.page_extension') or 'tsx'.
      */
     function module_component(string $component): string
     {
-        $extension = config('inertia.page_extension', 'tsx');
+        $extension = match (true) {
+            Config::has('inertia.page_extension') => Config::get('inertia.page_extension'),
+            Config::has('inertia.pages.page_extension') => Config::get('inertia.pages.page_extension'),
+            default => 'tsx',
+        };
 
         if (Str::startsWith($component, 'modules/')) {
             return "{$component}.{$extension}";
