@@ -1,4 +1,10 @@
-# 📌 Laravel Modular Package
+<p align="center">
+<img src="https://raw.githubusercontent.com/Pijler/docs/main/assets/pijler-icon-dark.svg" height="100" alt="Pijler logo">
+</p>
+
+<h2><p align="center">Laravel Modules</p></h2>
+
+### 🚀 Introduction
 
 This package provides a simple yet powerful structure for organizing **Laravel** applications into **independent modules**, allowing for a cleaner, more scalable, and maintainable architecture.
 
@@ -300,4 +306,4 @@ Returns the Vite/Inertia component path for module pages. The file extension com
 
 Open-source under the [MIT license](LICENSE).
 
-## 🚀 Thanks!
+### 🚀 Thanks!
