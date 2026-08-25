@@ -2,7 +2,7 @@
 
 namespace Example\Providers;
 
-use Modules\ModuleServiceProvider;
+use Pijler\LaravelModules\ModuleServiceProvider;
 
 class AppServiceProvider extends ModuleServiceProvider
 {

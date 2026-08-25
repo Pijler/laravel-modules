@@ -1,37 +1,37 @@
 <?php
 
-namespace Modules;
+namespace Pijler\LaravelModules;
 
 use Illuminate\Support\ServiceProvider as LaravelServiceProvider;
-use Modules\Commands\CastMakeCommand;
-use Modules\Commands\ChannelMakeCommand;
-use Modules\Commands\ClassMakeCommand;
-use Modules\Commands\ComponentMakeCommand;
-use Modules\Commands\ConfigMakeCommand;
-use Modules\Commands\ConsoleMakeCommand;
-use Modules\Commands\ControllerMakeCommand;
-use Modules\Commands\EnumMakeCommand;
-use Modules\Commands\EventMakeCommand;
-use Modules\Commands\ExceptionMakeCommand;
-use Modules\Commands\InterfaceMakeCommand;
-use Modules\Commands\JobMakeCommand;
-use Modules\Commands\JobMiddlewareMakeCommand;
-use Modules\Commands\ListenerMakeCommand;
-use Modules\Commands\MailMakeCommand;
-use Modules\Commands\MiddlewareMakeCommand;
-use Modules\Commands\ModuleMakeCommand;
-use Modules\Commands\NotificationMakeCommand;
-use Modules\Commands\ObserverMakeCommand;
-use Modules\Commands\PolicyMakeCommand;
-use Modules\Commands\ProviderMakeCommand;
-use Modules\Commands\RequestMakeCommand;
-use Modules\Commands\ResourceMakeCommand;
-use Modules\Commands\RuleMakeCommand;
-use Modules\Commands\ScopeMakeCommand;
-use Modules\Commands\TestMakeCommand;
-use Modules\Commands\TraitMakeCommand;
-use Modules\Commands\ViewMakeCommand;
-use Modules\Support\Macros;
+use Pijler\LaravelModules\Commands\CastMakeCommand;
+use Pijler\LaravelModules\Commands\ChannelMakeCommand;
+use Pijler\LaravelModules\Commands\ClassMakeCommand;
+use Pijler\LaravelModules\Commands\ComponentMakeCommand;
+use Pijler\LaravelModules\Commands\ConfigMakeCommand;
+use Pijler\LaravelModules\Commands\ConsoleMakeCommand;
+use Pijler\LaravelModules\Commands\ControllerMakeCommand;
+use Pijler\LaravelModules\Commands\EnumMakeCommand;
+use Pijler\LaravelModules\Commands\EventMakeCommand;
+use Pijler\LaravelModules\Commands\ExceptionMakeCommand;
+use Pijler\LaravelModules\Commands\InterfaceMakeCommand;
+use Pijler\LaravelModules\Commands\JobMakeCommand;
+use Pijler\LaravelModules\Commands\JobMiddlewareMakeCommand;
+use Pijler\LaravelModules\Commands\ListenerMakeCommand;
+use Pijler\LaravelModules\Commands\MailMakeCommand;
+use Pijler\LaravelModules\Commands\MiddlewareMakeCommand;
+use Pijler\LaravelModules\Commands\ModuleMakeCommand;
+use Pijler\LaravelModules\Commands\NotificationMakeCommand;
+use Pijler\LaravelModules\Commands\ObserverMakeCommand;
+use Pijler\LaravelModules\Commands\PolicyMakeCommand;
+use Pijler\LaravelModules\Commands\ProviderMakeCommand;
+use Pijler\LaravelModules\Commands\RequestMakeCommand;
+use Pijler\LaravelModules\Commands\ResourceMakeCommand;
+use Pijler\LaravelModules\Commands\RuleMakeCommand;
+use Pijler\LaravelModules\Commands\ScopeMakeCommand;
+use Pijler\LaravelModules\Commands\TestMakeCommand;
+use Pijler\LaravelModules\Commands\TraitMakeCommand;
+use Pijler\LaravelModules\Commands\ViewMakeCommand;
+use Pijler\LaravelModules\Support\Macros;
 
 class ServiceProvider extends LaravelServiceProvider
 {

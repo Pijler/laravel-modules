@@ -74,7 +74,7 @@ Example:
 
 namespace Blog\Providers;
 
-use Modules\ModuleServiceProvider;
+use Pijler\LaravelModules\ModuleServiceProvider;
 
 class AppServiceProvider extends ModuleServiceProvider
 {
@@ -200,7 +200,7 @@ Example:
 namespace Blog\Console;
 
 use Illuminate\Console\Scheduling\Schedule;
-use Modules\BaseKernel;
+use Pijler\LaravelModules\BaseKernel;
 
 class Kernel extends BaseKernel
 {

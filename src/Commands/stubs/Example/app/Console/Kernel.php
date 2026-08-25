@@ -3,7 +3,7 @@
 namespace Example\Console;
 
 use Illuminate\Console\Scheduling\Schedule;
-use Modules\BaseKernel;
+use Pijler\LaravelModules\BaseKernel;
 
 class Kernel extends BaseKernel
 {

@@ -1,15 +1,15 @@
 <?php
 
-namespace Modules\Inertia;
+namespace Pijler\LaravelModules\Inertia;
 
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Str;
 use Illuminate\Support\Stringable;
-use Modules\Exceptions\FilePathIsIncorrectException;
-use Modules\Exceptions\FilePathNotSpecifiedException;
-use Modules\Exceptions\ModuleNameNotFoundException;
-use Modules\Exceptions\ModuleNotExistException;
+use Pijler\LaravelModules\Exceptions\FilePathIsIncorrectException;
+use Pijler\LaravelModules\Exceptions\FilePathNotSpecifiedException;
+use Pijler\LaravelModules\Exceptions\ModuleNameNotFoundException;
+use Pijler\LaravelModules\Exceptions\ModuleNotExistException;
 
 /**
  * @see https://github.com/toanld/modules-inertia/blob/master/src/ModulesInertiaSource.php

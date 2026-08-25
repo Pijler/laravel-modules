@@ -28,7 +28,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Modules\\": "src/"
+            "Pijler\\LaravelModules\\": "src/"
         },
         "files": [
             "src/helpers.php"
@@ -45,7 +45,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Modules\\ServiceProvider"
+                "Pijler\\LaravelModules\\ServiceProvider"
             ]
         }
     },
