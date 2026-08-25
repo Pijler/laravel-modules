@@ -1,6 +1,6 @@
 <?php
 
-namespace Modules\Exceptions;
+namespace Pijler\LaravelModules\Exceptions;
 
 use Exception;
 

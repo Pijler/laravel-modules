@@ -1,12 +1,12 @@
 <?php
 
-namespace Modules\Commands;
+namespace Pijler\LaravelModules\Commands;
 
 use Illuminate\Foundation\Console\ViewMakeCommand as BaseViewMakeCommand;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Str;
 use Illuminate\Support\Stringable;
-use Modules\Traits\BaseCommands;
+use Pijler\LaravelModules\Traits\BaseCommands;
 use Symfony\Component\Console\Attribute\AsCommand;
 
 #[AsCommand(name: 'module:make-view')]

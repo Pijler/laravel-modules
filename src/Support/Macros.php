@@ -1,10 +1,10 @@
 <?php
 
-namespace Modules\Support;
+namespace Pijler\LaravelModules\Support;
 
 use Inertia\Inertia;
 use Inertia\Testing\AssertableInertia;
-use Modules\Inertia\Module;
+use Pijler\LaravelModules\Inertia\Module;
 
 class Macros
 {

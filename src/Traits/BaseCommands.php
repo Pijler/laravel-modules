@@ -1,6 +1,6 @@
 <?php
 
-namespace Modules\Traits;
+namespace Pijler\LaravelModules\Traits;
 
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Str;

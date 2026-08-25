@@ -1,10 +1,10 @@
 <?php
 
-use Modules\Exceptions\FilePathIsIncorrectException;
-use Modules\Exceptions\FilePathNotSpecifiedException;
-use Modules\Exceptions\ModuleNameNotFoundException;
-use Modules\Exceptions\ModuleNotExistException;
-use Modules\Inertia\Module;
+use Pijler\LaravelModules\Exceptions\FilePathIsIncorrectException;
+use Pijler\LaravelModules\Exceptions\FilePathNotSpecifiedException;
+use Pijler\LaravelModules\Exceptions\ModuleNameNotFoundException;
+use Pijler\LaravelModules\Exceptions\ModuleNotExistException;
+use Pijler\LaravelModules\Inertia\Module;
 
 beforeEach(function () {
     $this->module = new Module;

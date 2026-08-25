@@ -1,6 +1,6 @@
 <?php
 
-namespace Modules;
+namespace Pijler\LaravelModules;
 
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Application;

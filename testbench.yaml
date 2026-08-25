@@ -1,7 +1,7 @@
 laravel: "./workbench"
 
 providers:
-  - Modules\ServiceProvider
+  - Pijler\LaravelModules\ServiceProvider
 
 workbench:
   start: "/"

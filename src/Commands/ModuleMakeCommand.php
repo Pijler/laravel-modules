@@ -1,11 +1,11 @@
 <?php
 
-namespace Modules\Commands;
+namespace Pijler\LaravelModules\Commands;
 
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Str;
-use Modules\Traits\BaseCommands;
+use Pijler\LaravelModules\Traits\BaseCommands;
 use Symfony\Component\Console\Attribute\AsCommand;
 
 use function Laravel\Prompts\text;

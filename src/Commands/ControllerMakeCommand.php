@@ -1,9 +1,9 @@
 <?php
 
-namespace Modules\Commands;
+namespace Pijler\LaravelModules\Commands;
 
 use Illuminate\Routing\Console\ControllerMakeCommand as BaseControllerMakeCommand;
-use Modules\Traits\BaseCommands;
+use Pijler\LaravelModules\Traits\BaseCommands;
 use Symfony\Component\Console\Attribute\AsCommand;
 
 #[AsCommand(name: 'module:make-controller')]
