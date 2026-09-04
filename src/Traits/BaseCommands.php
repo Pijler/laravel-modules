@@ -45,6 +45,25 @@ trait BaseCommands
     }
 
     /**
+     * Remap inherited Laravel generator signatures to module:make-*.
+     *
+     * When the parent command defines $signature (Laravel 13+), the child's
+     * $name is ignored and Artisan registers the command as make:* instead of
+     * module:make-*. Rewriting the signature keeps the AsCommand name, injects
+     * {module}, and preserves the parent's arguments and options.
+     */
+    protected function configureUsingFluentDefinition()
+    {
+        if (is_string($this->signature) && str_starts_with($this->signature, 'make:')) {
+            $this->signature = preg_replace('/^make:/', 'module:make-', $this->signature, 1);
+
+            $this->signature = preg_replace('/^(module:make-\S+)/', '$1 {module : The name of the module}', $this->signature, 1);
+        }
+
+        parent::configureUsingFluentDefinition();
+    }
+
+    /**
      * Get the console command arguments.
      */
     protected function getArguments(): array
